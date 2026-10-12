@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up - DriveEasy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar"><div class="logo">Drive<span>Easy</span></div></div>
+
+  <div class="auth-wrap">
+    <div class="auth-box">
+      <h2>Create account</h2>
+      <form id="signupForm">
+        <label>Full name</label>
+        <input type="text" id="name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Phone</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" title="Enter 10 digit number" required>
+
+        <label>Date of birth</label>
+        <input type="date" id="dob" required>
+
+        <label>Sign up as</label>
+        <select id="role">
+          <option value="user">User (customer)</option>
+          <option value="admin">Admin (only one allowed)</option>
+        </select>
+
+        <label>Password (min 6 characters)</label>
+        <input type="password" id="password" minlength="6" required>
+
+        <button class="btn" type="submit">Sign up</button>
+        <p class="error" id="error"></p>
+      </form>
+      <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

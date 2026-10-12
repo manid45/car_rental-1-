@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cars - DriveEasy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Drive<span>Easy</span></div>
+    <div class="nav-right">
+      <span id="welcome"></span>
+      <button class="btn amber small" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Available cars</h2>
+    <div class="car-grid" id="carGrid"></div>
+
+    <h2>My bookings</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Car</th><th>From</th><th>To</th><th>Days</th><th>Total</th><th>Status</th></tr>
+        </thead>
+        <tbody id="myBookings"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Booking popup -->
+  <dialog id="bookDialog">
+    <h3 id="dialogTitle"></h3>
+    <form id="bookForm">
+      <label>Customer name</label>
+      <input type="text" id="cName" required>
+
+      <label>Phone</label>
+      <input type="tel" id="cPhone" pattern="[0-9]{10}" title="Enter 10 digit number" required>
+
+      <label>Driving licence number</label>
+      <input type="text" id="cLicense" required>
+
+      <div class="row">
+        <div><label>From</label><input type="date" id="fromDate" required></div>
+        <div><label>To</label><input type="date" id="toDate" required></div>
+      </div>
+
+      <p class="total" id="totalText">Total: Rs. 0</p>
+      <p class="error" id="bookError"></p>
+
+      <button class="btn" type="submit">Confirm booking</button>
+      <button class="btn red" type="button" id="cancelBtn">Cancel</button>
+    </form>
+  </dialog>
+
+  <script src="js/common.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>
